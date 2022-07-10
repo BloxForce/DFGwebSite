@@ -1,0 +1,49 @@
+<html>
+ <head> 
+  <title> Mysa in your system </title> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1"> 
+  <style>
+.terminal{display:block;margin-left:auto;margin-right:auto;border:2px solid #000;background:rgba(0,0,0,0.76);color:#fff;border-radius:5px;height:400px;overflow-y:auto;background-image:url('logo.png');background-repeat:no-repeat;background-attachment: fixed;}
+.cursor{color:#fff}
+.uname{color:red}
+.success{color:#00ff00}  
+</style> 
+ </head> 
+ <body onclick="music()"> 
+  <div class="terminal"> 
+   <p id="command"><i class="uname" <span="">|</i></p> 
+  </div> 
+  <audio style="display:none" id="song" autoplay="" loop="" controls=""> 
+   <source src="message-to-admins.mp3" type="audio/mp3"> 
+  </audio> 
+  <script>
+var message = "<i class='uname'>root@kali:# </i> python exploit.py <br/><br/>[+] Username :                  ******** <br/>[+] Password :           ************* <br/><br/>Connecting to the Server ...... <br/><br/><br/>                             <i class='success'>Connected to the Server .....</i><br/><br/> <i class='uname'>root@www-data:#</i>    bash mysM.sh<br/><br/>Fuc**n hacked Website By Mysa. This is your Security??<br/><br/><i class='uname'>root@www-data:#</i> exit<br/><i class='uname'>root@kali:# </i>                              "
+var msg = document.querySelector("#command");
+cmd = "";
+//change typing speed here
+speed = 30;
+var x = 0;
+setInterval(function(){
+if(x<message.length){
+if(x == message.length - 1){
+cmd = "";
+x = 0;
+}
+cmd = cmd + message[x];
+msg.innerHTML= cmd + "<span class='cursor'>" + "|" + "</span>";
+x++;
+}
+},speed);
+//music play 
+var song = document.querySelector("#song");
+function music(){
+if(song.paused){
+song.play();
+}else{
+song.pause();
+}
+}
+</script> 
+ </body>
+</html>
